@@ -1,13 +1,8 @@
 import React from 'react'
 
-function Result(data){
-   if(data){
-       
-       return (<ul>
-        {data.map(repo => (
-                <li key={repo.id}>{repo.id.full_name}</li>))} 
-    </ul>)
-   }
-    else { console.log('no data! ')}
+
+function Result(gitData){
+    console.log(gitData)
+        return (<p>one day this will be data</p>)
 }
 export default Result;

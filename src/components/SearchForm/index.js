@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { fetchGit } from '../../actions';
+import './style.css'
 
 function SearchForm() {
 
@@ -16,11 +17,14 @@ function SearchForm() {
     }
 
     return (
+        <>
         <form role="form" onChange={updateInput} onSubmit={handleSubmit}>
-            <label htmlFor="username">username</label>
-            <input id="username" type="text" />
-            <input type="submit" value="Search" />
+            <label htmlFor="username"></label>
+            <input id="username" placeholder="Search..." type="text" />
+            <input id="search" type="submit" value="Search" />
         </form>
+       
+        </>
     );
 };
 

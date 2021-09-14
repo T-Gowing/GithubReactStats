@@ -1,11 +1,10 @@
 import React from 'react';
-import { SearchForm, Result } from './components'
+import { SearchForm, Result, Header } from './components'
 
 function App(){
     return(
         <main>
-            <SearchForm/>
-            <Result/>
+            <Header/>
         </main>
     )
 }

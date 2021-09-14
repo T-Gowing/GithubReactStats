@@ -1,0 +1,26 @@
+#username{
+    width: 15vw;
+    border-radius: 8px;
+    background-color:#1b1f23 ;
+    border: 1px gray;
+    border-style: solid;
+    height: 1.5vw;
+    color:white;
+    font-size: large;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+#search{
+    height: fit-content;
+    background-color:#1b1f23 ;
+    border: none;
+    font-size: large;
+    padding: 3px;
+    margin-right: 5px;
+    color:white;
+    
+}
+#search:hover {
+    color: gray;
+}
