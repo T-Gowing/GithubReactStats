@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 import axios from 'axios'
 
-const gitHubUrl = "https://api.github.com/users/t-gowing/repos";
+const gitHubUrl = "https://api.github.com/users/cerise-at/repos";
 
 function Result() {
   const [userData, setUserData] = useState([{}]);
@@ -14,33 +14,46 @@ function Result() {
   const getGitHubUserWithAxios = async () => {
     const response = await axios.get(gitHubUrl);
     setUserData(response.data);
+    await console.log(userData)
   };
   
-  let filteredData = userData.map(data => data.full_name)
-  console.log("this is " +filteredData)
+  
 
-    console.log(userData.length)
+  console.log(`This user data is ${userData}`)
+    console.log(`This user has ${userData.length} repos`)
     return (
       <section>
             <div className='userinfo'>
                 <h2>GitHub User Data</h2>
-                <div>
-                    <ul>{userData.map(d =>
-                        <li key={d.id}>{d.name}
-                            <ul>
-                                <li>There are {d.stargazers_count} stargazers</li>
-                                <li>There are {d.watchers_count} watchers</li>
-                                <li>There are {d.forks_count} forks</li>
-                            </ul>
-                        </li>)}
-                    </ul>
+                <img src={userData.avatar_url}></img>
+                    <h5>Username: {userData[0].login}</h5>
+                    <h5>Public Repos: {userData.public_repos}</h5>  
+                    
+                    <div>{userData.map((d, myKey) =>
+                    <table key={myKey} >
+                        <thead><tr><th>{d.name}</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>Stargazers</td>
+                                <td>{d.stargazers_count}</td>
+                            </tr>
+                            <tr>
+                                <td>Watchers</td>
+                                <td>{d.watchers_count}</td>
+                            </tr>
+                            <tr>
+                                <td>Forks</td>
+                                <td>{d.forks_count}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    )}
+                    </div>
                     <div>
-                    <img src={userData.avatar_url}></img>
-                    <h5>Username: {userData.login}</h5>
-                    <h5>Public Repos: {userData.public_repos}</h5> 
+
                     </div>
                 </div>
-            </div>
+           
       </section>
     )
   };
@@ -104,7 +117,7 @@ export default Result;
 //             }
 //         }
 //         getData()
-//         return()=>{console.log('cleaned')}
+//         return()=>{('cleaned')}
 //     }, [])
 //     return (
 //         <>
