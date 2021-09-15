@@ -2,30 +2,40 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 import axios from 'axios'
 
-const gitHubUrl = "https://api.github.com/users/t-gowing";
+const gitHubUrl = "https://api.github.com/users/t-gowing/repos";
 
 function Result() {
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState([{}]);
 
   useEffect(() => {
     getGitHubUserWithAxios();
   }, []);
 
-
   const getGitHubUserWithAxios = async () => {
     const response = await axios.get(gitHubUrl);
     setUserData(response.data);
   };
+  
+  let filteredData = userData.map(data => data.full_name)
+  console.log("this is " +filteredData)
 
-    console.log(userData)
+    console.log(userData.length)
     return (
       <div>
         <header>
           <h2>GitHub User Data</h2>
         </header>
         <div>
-          <h5>{userData.login}</h5>
-          <h5>{userData.public_repos}</h5>
+            <ul>
+                {userData.map(d =><li key={d.id}>{d.name}
+                    <ul>
+                        <li>There are {d.stargazers_count} stargazers</li>
+                        <li>There are {d.watchers_count} watchers</li>
+                        <li>There are {d.forks_count} forks</li>
+                    </ul>
+                </li>
+                )}
+            </ul>
         </div>
       </div>
     )

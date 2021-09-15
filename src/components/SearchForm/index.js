@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { fetchGit } from '../../actions';
 import { default as Result } from '../Result';
 import './style.css'
 
@@ -8,8 +9,7 @@ function SearchForm() {
 
     let handleSubmit = e => {
         e.preventDefault()
-        // Result(gitUser);
-        Result()
+        fetchGit(gitUser)
     }
 
     let updateInput = e => {
