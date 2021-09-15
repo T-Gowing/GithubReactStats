@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 import axios from 'axios'
 
-const gitHubUrl = "https://api.github.com/users/t-gowing";
+const gitHubUrl = "https://api.github.com/users/cerise-at";
 
 function Result() {
   const [userData, setUserData] = useState({});
@@ -19,15 +19,19 @@ function Result() {
 
     console.log(userData)
     return (
-      <div>
-        <header>
+      <section>
+        <div className='userinfo'>
+          
           <h2>GitHub User Data</h2>
-        </header>
-        <div>
-          <h5>{userData.login}</h5>
-          <h5>{userData.public_repos}</h5>
+    
+          <div>
+            <img src={userData.avatar_url}></img>
+            <h5>Username: {userData.login}</h5>
+            <h5>Public Repos: {userData.public_repos}</h5>
+            
+          </div>
         </div>
-      </div>
+      </section>
     )
   };
 

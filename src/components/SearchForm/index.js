@@ -9,7 +9,7 @@ function SearchForm() {
     let handleSubmit = e => {
         e.preventDefault()
         // Result(gitUser);
-        Result()
+        Result();
     }
 
     let updateInput = e => {
