@@ -21,23 +21,27 @@ function Result() {
 
     console.log(userData.length)
     return (
-      <div>
-        <header>
-          <h2>GitHub User Data</h2>
-        </header>
-        <div>
-            <ul>
-                {userData.map(d =><li key={d.id}>{d.name}
-                    <ul>
-                        <li>There are {d.stargazers_count} stargazers</li>
-                        <li>There are {d.watchers_count} watchers</li>
-                        <li>There are {d.forks_count} forks</li>
+      <section>
+            <div className='userinfo'>
+                <h2>GitHub User Data</h2>
+                <div>
+                    <ul>{userData.map(d =>
+                        <li key={d.id}>{d.name}
+                            <ul>
+                                <li>There are {d.stargazers_count} stargazers</li>
+                                <li>There are {d.watchers_count} watchers</li>
+                                <li>There are {d.forks_count} forks</li>
+                            </ul>
+                        </li>)}
                     </ul>
-                </li>
-                )}
-            </ul>
-        </div>
-      </div>
+                    <div>
+                    <img src={userData.avatar_url}></img>
+                    <h5>Username: {userData.login}</h5>
+                    <h5>Public Repos: {userData.public_repos}</h5> 
+                    </div>
+                </div>
+            </div>
+      </section>
     )
   };
 

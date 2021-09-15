@@ -10,6 +10,8 @@ function SearchForm() {
     let handleSubmit = e => {
         e.preventDefault()
         fetchGit(gitUser)
+        // Result(gitUser);
+        Result();
     }
 
     let updateInput = e => {
