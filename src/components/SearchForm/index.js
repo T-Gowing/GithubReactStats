@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { fetchGit } from '../../actions';
+import { default as Result } from '../Result';
 import './style.css'
 
 function SearchForm() {
@@ -8,7 +8,7 @@ function SearchForm() {
 
     let handleSubmit = e => {
         e.preventDefault()
-        fetchGit(gitUser);
+        Result(gitUser);
     }
 
     let updateInput = e => {
@@ -23,7 +23,7 @@ function SearchForm() {
             <input id="username" placeholder="Search..." type="text" />
             <input id="search" type="submit" value="Search" />
         </form>
-       
+
         </>
     );
 };
