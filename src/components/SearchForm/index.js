@@ -8,7 +8,8 @@ function SearchForm() {
 
     let handleSubmit = e => {
         e.preventDefault()
-        Result(gitUser);
+        // Result(gitUser);
+        Result()
     }
 
     let updateInput = e => {

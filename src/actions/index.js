@@ -1,6 +1,6 @@
-// import axios from 'axios';
-// import Result from '../components/Result'
-// import React from 'react';
+import axios from 'axios';
+import Result from '../components/Result'
+import React from 'react';
 
 // export const fetchGit = async (username) => {
    
@@ -12,4 +12,11 @@
 //         throw new Error(err.message)
 //     }
 // }
+
+// const getGitHubUserWithAxios = async () => {
+//     const response = await axios.get(gitHubUrl);
+//     setUserData(response.data);
+// };
+
+// export default getGitHubUserWithAxios;
 
