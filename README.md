@@ -1,1 +1,1 @@
-# GithubReactStats
+# react-practice

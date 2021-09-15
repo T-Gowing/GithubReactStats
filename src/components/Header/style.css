@@ -1,0 +1,23 @@
+form{
+    width: fit-content;
+    margin-right: 1%;
+}
+
+header{
+    background-color: #1b1f23;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100vw;
+    height: fit-content;
+    justify-content: left;
+    align-items: center;
+    top: 0;
+}
+
+img{
+    width: 5vw;
+    margin-left: 1%;
+    padding:1vw;
+}
+
+
